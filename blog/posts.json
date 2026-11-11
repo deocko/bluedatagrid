@@ -1,0 +1,701 @@
+{
+ "version": 1,
+ "posts": [
+  {
+   "slug": "ia-encontro-tus-llaves",
+   "date": "2026-11-09",
+   "week": "2 al 8 de noviembre de 2026",
+   "cat": "Ciberseguridad",
+   "icon": "unlock",
+   "title": "Una IA encontró las llaves en GitHub y entró a la nube en 5 minutos",
+   "dek": "Microsoft detectó un agente de inteligencia artificial que busca contraseñas y llaves de acceso olvidadas en código público de GitHub y las usa para entrar a cuentas de Azure. En un caso pasó de la búsqueda al robo de datos en cinco minutos.",
+   "tldr": "Si alguna vez subiste una contraseña, token o llave de API a un repositorio, cámbiala hoy: borrar el archivo no la invalida. Guarda tus secretos en un baúl como Azure Key Vault, usa identidades administradas y activa el escaneo de secretos en tus repositorios.",
+   "stats": [
+    {
+     "n": "5 min",
+     "l": "de una llave publicada en GitHub al robo de datos en Azure (Microsoft)"
+    },
+    {
+     "n": "28.6 M",
+     "l": "secretos nuevos expuestos en GitHub solo en 2025 (GitGuardian)"
+    },
+    {
+     "n": "64 %",
+     "l": "de las llaves válidas filtradas en 2022 siguen activas (GitGuardian)"
+    },
+    {
+     "n": "+81 %",
+     "l": "crecieron las fugas de llaves de servicios de IA en 2025 (GitGuardian)"
+    }
+   ],
+   "flow_title": "Qué hacer esta semana con tus llaves y contraseñas",
+   "flow": [
+    {
+     "icon": "search",
+     "label": "Busca secretos en tus repositorios públicos y privados"
+    },
+    {
+     "icon": "zap",
+     "label": "Cambia toda llave que haya estado expuesta"
+    },
+    {
+     "icon": "lock",
+     "label": "Mueve los secretos a un baúl y usa identidades administradas"
+    },
+    {
+     "icon": "radar",
+     "label": "Revisa los accesos de tus aplicaciones desde el 28 de octubre"
+    }
+   ],
+   "stories": [
+    {
+     "icon": "bot",
+     "place": "Microsoft · Azure",
+     "title": "Un agente que no se cansa de buscar",
+     "text": "Desde agosto, un agente basado en la herramienta ARTEX lanzó un gran volumen de búsquedas en GitHub que combinaban nombres de empresas con palabras como \"secret\" o \"key\". Desde el 28 de octubre usó las llaves que encontró para entrar a cuentas de Azure y Microsoft 365, sacar claves de almacenamiento y bases de datos y leer archivos de SharePoint y OneDrive. Cuando un comando fallaba, lo corregía solo en menos de un minuto y seguía.",
+     "src": "Microsoft Security",
+     "url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/"
+    },
+    {
+     "icon": "alert",
+     "place": "GitGuardian · GitHub",
+     "title": "El problema son las llaves que nadie cambia",
+     "text": "ARTEX se publicó en GitHub a finales de julio como herramienta de pruebas de seguridad y se retiró el 8 de octubre, pero ya hay más de 1,400 copias expuestas en internet, según Censys. GitGuardian, que revisa todo el código público de GitHub desde 2017, contó 28.6 millones de secretos nuevos expuestos solo en 2025, y la mayoría de los que siguen activos nadie los ha cambiado.",
+     "src": "GitGuardian",
+     "url": "https://blog.gitguardian.com/the-agents-have-now-found-your-secrets-on-github-artex-is-abusing-public-secrets-right-now/"
+    }
+   ],
+   "lessons": [
+    {
+     "icon": "unlock",
+     "title": "Borrar el archivo no cierra la puerta",
+     "text": "Una llave publicada sigue sirviendo hasta que la cambias, y el historial de Git la conserva."
+    },
+    {
+     "icon": "lock",
+     "title": "El código no debe llevar contraseñas",
+     "text": "Guarda los secretos en un baúl como Azure Key Vault y usa identidades administradas en lugar de llaves fijas."
+    },
+    {
+     "icon": "radar",
+     "title": "Vigila también a tus aplicaciones",
+     "text": "Los accesos de apps y cuentas de servicio se revisan y se limitan con los permisos mínimos, igual que los de tus usuarios."
+    }
+   ],
+   "close": {
+    "title": "Cómo te ayuda Bluedatagrid",
+    "text": "Revisamos tus repositorios y pipelines en busca de llaves expuestas, las cambiamos sin detener tu operación, movemos los secretos a un baúl con identidades administradas y dejamos alertas para detectar accesos raros en tu nube.",
+    "solutions": [
+     {
+      "name": "Ciberseguridad",
+      "icon": "shield"
+     },
+     {
+      "name": "Cloud y DevOps",
+      "icon": "cloud"
+     }
+    ]
+   },
+   "sources": [
+    {
+     "name": "Microsoft Security",
+     "url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/"
+    },
+    {
+     "name": "GitGuardian",
+     "url": "https://blog.gitguardian.com/the-agents-have-now-found-your-secrets-on-github-artex-is-abusing-public-secrets-right-now/"
+    },
+    {
+     "name": "Windows Forum",
+     "url": "https://windowsforum.com/news/artex-ai-agents-turn-leaked-github-secrets-into-azure-key-vault-theft-in-five-minutes.451133/"
+    },
+    {
+     "name": "OECD.AI (registro de incidentes)",
+     "url": "https://oecd.ai/en/incidents/2026-11-06-8336"
+    }
+   ]
+  },
+  {
+   "slug": "php2shell",
+   "date": "2026-11-02",
+   "week": "26 de octubre al 1 de noviembre de 2026",
+   "cat": "Ciberseguridad",
+   "icon": "shield",
+   "title": "PHP2Shell: la falla que pone en riesgo a 7 de cada 10 sitios web",
+   "dek": "Dos fallas críticas en PHP, el lenguaje detrás de la mayoría de los sitios web, ya se están explotando. El 26 de octubre la agencia de ciberseguridad de Estados Unidos (CISA) confirmó los ataques y ordenó parchar en tres días.",
+   "tldr": "Si tu sitio, tienda en línea o sistema interno corre en PHP, actualízalo hoy a 8.2.35, 8.3.36, 8.4.27 o 8.5.12. Las fallas permiten que alguien sin usuario ni contraseña ejecute código en tu servidor, y los atacantes las usan desde antes de que existiera el parche.",
+   "stats": [
+    {
+     "n": "69.3 %",
+     "l": "de los sitios con lenguaje conocido usan PHP (W3Techs)"
+    },
+    {
+     "n": "9.2 de 10",
+     "l": "calificación de gravedad de ambas fallas"
+    },
+    {
+     "n": "+1.3 M",
+     "l": "servidores expuestos en internet podrían ser vulnerables"
+    },
+    {
+     "n": "50 mil",
+     "l": "intentos de ataque desde más de 600 direcciones en 70 países"
+    }
+   ],
+   "flow_title": "Qué hacer esta semana si usas PHP",
+   "flow": [
+    {
+     "icon": "search",
+     "label": "Ubica todos tus servidores y sitios con PHP"
+    },
+    {
+     "icon": "zap",
+     "label": "Actualiza a la versión corregida y reinicia PHP"
+    },
+    {
+     "icon": "lock",
+     "label": "Si no puedes actualizar, aísla el sitio de internet"
+    },
+    {
+     "icon": "radar",
+     "label": "Revisa tus registros desde mediados de octubre"
+    }
+   ],
+   "stories": [
+    {
+     "icon": "alert",
+     "place": "CISA · Estados Unidos",
+     "title": "Confirmado: ya hay ataques exitosos",
+     "text": "El 26 de octubre CISA agregó las dos fallas (CVE-2026-109618 y CVE-2026-109619) a su catálogo de vulnerabilidades explotadas y dio a las dependencias federales hasta el 29 de octubre para parchar. Un investigador registró 35 ejecuciones de comandos exitosas en tres servidores trampa con PHP 8.4.26, y un laboratorio de la Universidad de Delft contó más de 50 mil intentos de ataque.",
+     "src": "The Register y BleepingComputer",
+     "url": "https://www.theregister.com/cyber-crime/2026/10/27/cisa-confirms-php2shell-under-attack-as-researchers-clock-successful-exploits/5305681"
+    },
+    {
+     "icon": "server",
+     "place": "PHP y Amazon",
+     "title": "Los atacantes llegaron antes que el parche",
+     "text": "PHP publicó las versiones corregidas el 21 de octubre, un día antes de lo planeado porque los datos de las fallas ya se habían filtrado. Amazon detectó un intento de ataque el 17 de octubre, cuatro días antes. Las versiones de PHP 5.4 a 7.3 ya no reciben soporte y no tendrán corrección: hay que migrarlas.",
+     "src": "Tenable",
+     "url": "https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote"
+    }
+   ],
+   "lessons": [
+    {
+     "icon": "search",
+     "title": "No puedes parchar lo que no sabes que tienes",
+     "text": "Un inventario de tus servidores y versiones convierte una emergencia en una tarea de horas."
+    },
+    {
+     "icon": "zap",
+     "title": "Actualizar no basta si no reinicias",
+     "text": "Los procesos de PHP que ya estaban corriendo siguen vulnerables hasta que se reinician."
+    },
+    {
+     "icon": "shield",
+     "title": "Las versiones viejas son una puerta abierta",
+     "text": "PHP 7 y anteriores ya no reciben parches: migrar es parte de la seguridad, no un lujo."
+    }
+   ],
+   "close": {
+    "title": "Cómo te ayuda Bluedatagrid",
+    "text": "Revisamos qué versión de PHP corren tus sitios y sistemas, aplicamos el parche sin tumbar tu operación, migramos las versiones sin soporte y dejamos monitoreo para detectar cualquier intento de ataque.",
+    "solutions": [
+     {
+      "name": "Ciberseguridad",
+      "icon": "shield"
+     },
+     {
+      "name": "Software a la medida",
+      "icon": "code"
+     }
+    ]
+   },
+   "sources": [
+    {
+     "name": "The Register",
+     "url": "https://www.theregister.com/cyber-crime/2026/10/27/cisa-confirms-php2shell-under-attack-as-researchers-clock-successful-exploits/5305681"
+    },
+    {
+     "name": "BleepingComputer",
+     "url": "https://www.bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks/"
+    },
+    {
+     "name": "Tenable",
+     "url": "https://www.tenable.com/blog/php2shell-cve-2026-109618-cve-2026-109619-frequently-asked-questions-about-critical-php-remote"
+    },
+    {
+     "name": "watchTowr",
+     "url": "https://watchtowr.com/intelligence/php-cve-2026-109618-faq/"
+    },
+    {
+     "name": "myITforum (resumen semanal)",
+     "url": "https://myitforum.substack.com/p/it-pros-weekly-roundup-october-2630"
+    }
+   ]
+  },
+  {
+   "slug": "la-nube-se-llena",
+   "date": "2026-10-26",
+   "week": "19 al 25 de octubre de 2026",
+   "cat": "Cloud",
+   "icon": "cloud",
+   "title": "La nube se está llenando: Amazon ya vendió casi todo 2027",
+   "dek": "El jefe de Amazon dijo que la capacidad de AWS para 2027 está prácticamente vendida, y Meta anunció que buscará hasta 95 mil millones de dólares para construir más centros de datos de IA.",
+   "tldr": "La IA está consumiendo la nube más rápido de lo que se puede construir. Las grandes empresas reservan capacidad con años de anticipación; si tu negocio depende de la nube, conviene planear, optimizar lo que ya usas y no quedar amarrado a un solo proveedor.",
+   "stats": [
+    {
+     "n": "2027",
+     "l": "capacidad de AWS ya “mayormente vendida”"
+    },
+    {
+     "n": "$220 mil M",
+     "l": "dólares invertirá Amazon en 2026, y aun así no alcanza"
+    },
+    {
+     "n": "$95 mil M",
+     "l": "dólares buscará Meta con venta de acciones para su IA"
+    },
+    {
+     "n": "$135-145 mil M",
+     "l": "dólares invertirá Meta en 2026 en infraestructura"
+    }
+   ],
+   "flow_title": "Cómo asegurar tu lugar en la nube",
+   "flow": [
+    {
+     "icon": "search",
+     "label": "Mide cuánta nube usas y cuánta necesitarás"
+    },
+    {
+     "icon": "chart",
+     "label": "Optimiza: apaga lo ocioso y ajusta tamaños"
+    },
+    {
+     "icon": "lock",
+     "label": "Reserva capacidad para lo crítico"
+    },
+    {
+     "icon": "network",
+     "label": "Diseña para moverte entre proveedores"
+    }
+   ],
+   "stories": [
+    {
+     "icon": "server",
+     "place": "Amazon Web Services",
+     "title": "“2027 está mayormente vendido”",
+     "text": "Andy Jassy, director de Amazon, dijo el 23 de octubre que la capacidad de AWS para 2027 ya está casi toda comprometida y que una buena parte de 2028 también. Ni con 220 mil millones de dólares de inversión este año alcanzan a cubrir la demanda; la falta de centros de datos, energía y memoria sigue después de 2027.",
+     "src": "Reuters y 24/7 Wall St.",
+     "url": "https://247wallst.com/investing/2026/10/24/amazons-aws-has-already-sold-a-good-chunk-of-2028-capacity/"
+    },
+    {
+     "icon": "building",
+     "place": "Meta",
+     "title": "Hasta 95 mil millones para más centros de datos",
+     "text": "Meta anunció el 26 de octubre una venta de acciones de hasta 95 mil millones de dólares para pagar centros de datos y capacidad de cómputo de IA, y subió su inversión de 2026 a entre 135 y 145 mil millones. En el tercer trimestre gastó más efectivo del que generó por primera vez en más de diez años.",
+     "src": "Reuters vía Business Recorder",
+     "url": "https://www.brecorder.com/news/40445992/meta-to-raise-up-to-95-billion-in-equity-to-fund-costly-ai-expansion"
+    }
+   ],
+   "lessons": [
+    {
+     "icon": "chart",
+     "title": "Lo que no se mide se desperdicia",
+     "text": "Servidores encendidos sin uso cuestan dinero y ocupan capacidad que hoy escasea."
+    },
+    {
+     "icon": "lock",
+     "title": "Reserva lo que no puede fallar",
+     "text": "Para tus sistemas críticos, comprometer capacidad por adelantado da precio y disponibilidad."
+    },
+    {
+     "icon": "network",
+     "title": "No te amarres a un solo proveedor",
+     "text": "Contenedores y arquitectura portable te permiten moverte a donde haya espacio."
+    }
+   ],
+   "close": {
+    "title": "Cómo te ayuda Bluedatagrid",
+    "text": "Revisamos tu consumo de nube, eliminamos el gasto ocioso y diseñamos una arquitectura portable con contenedores y automatización, para que tus aplicaciones y modelos de IA tengan dónde correr hoy y cuando crezcas.",
+    "solutions": [
+     {
+      "name": "Cloud y DevOps",
+      "icon": "cloud"
+     },
+     {
+      "name": "Inteligencia Artificial",
+      "icon": "brain"
+     }
+    ]
+   },
+   "sources": [
+    {
+     "name": "24/7 Wall St.",
+     "url": "https://247wallst.com/investing/2026/10/24/amazons-aws-has-already-sold-a-good-chunk-of-2028-capacity/"
+    },
+    {
+     "name": "Reuters vía Investing.com",
+     "url": "https://www.investing.com/news/stock-market-news/amazon-cloud-capacity-sold-out-through-2027-ceo-jassy-says-4970506"
+    },
+    {
+     "name": "The Information",
+     "url": "https://www.theinformation.com/briefings/aws-sold-capacity-2028-jassy-says"
+    },
+    {
+     "name": "Business Recorder (Reuters)",
+     "url": "https://www.brecorder.com/news/40445992/meta-to-raise-up-to-95-billion-in-equity-to-fund-costly-ai-expansion"
+    },
+    {
+     "name": "CNBC",
+     "url": "https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html"
+    }
+   ]
+  },
+  {
+   "slug": "record-de-parches",
+   "date": "2026-10-19",
+   "week": "12 al 18 de octubre de 2026",
+   "cat": "Ciberseguridad",
+   "icon": "alert",
+   "title": "1,413 parches en un mes: ¿tu empresa alcanza a instalarlos?",
+   "dek": "Microsoft corrigió en octubre la cifra récord de 1,413 fallas, y en la misma semana Cisco e Ivanti reportaron ataques activos contra equipos de correo y VPN.",
+   "tldr": "La IA está encontrando fallas más rápido que nunca, y los parches llegan por miles. Ya no se trata de instalar todo, sino de saber qué tienes, atender primero lo que ya se está explotando y automatizar el resto.",
+   "stats": [
+    {
+     "n": "1,413",
+     "l": "fallas corrigió Microsoft en un solo mes"
+    },
+    {
+     "n": "3.4×",
+     "l": "más que en agosto, cuando fueron 415"
+    },
+    {
+     "n": "+4,000",
+     "l": "fallas de Microsoft parchadas en 2026"
+    },
+    {
+     "n": "9.8 / 10",
+     "l": "gravedad de la falla en el correo de Cisco"
+    }
+   ],
+   "flow_title": "Cómo parchar sin ahogarte",
+   "flow": [
+    {
+     "icon": "search",
+     "label": "Inventaria cada equipo, sistema y versión"
+    },
+    {
+     "icon": "radar",
+     "label": "Atiende primero las fallas que ya se explotan"
+    },
+    {
+     "icon": "zap",
+     "label": "Prueba y automatiza la instalación del resto"
+    },
+    {
+     "icon": "shield",
+     "label": "Verifica que nada quedó comprometido"
+    }
+   ],
+   "stories": [
+    {
+     "icon": "building",
+     "place": "Microsoft",
+     "title": "El martes de parches más grande de la historia",
+     "text": "La actualización de octubre trajo 1,413 correcciones: 1,102 en Windows y 134 en Office, más de 70 críticas y una ya explotada que evade la marca de archivos descargados de internet. Expertos atribuyen el salto a la IA, que acelera la búsqueda de fallas en ambos bandos.",
+     "src": "The Hacker News",
+     "url": "https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html"
+    },
+    {
+     "icon": "server",
+     "place": "Cisco e Ivanti",
+     "title": "Atacan las puertas de entrada",
+     "text": "Un correo con un adjunto preparado basta para tomar control total de ciertos filtros de correo de Cisco, sin solución temporal. En las VPN de Ivanti, atacantes explotaban una falla desde el 1 de octubre y borraban sus huellas de las bitácoras.",
+     "src": "TechNadu y BleepingComputer",
+     "url": "https://www.technadu.com/cisco-secure-email-gateway-flaw-cve-2026-76519-is-under-active-attack-with-no-workaround/642124/"
+    }
+   ],
+   "lessons": [
+    {
+     "icon": "database",
+     "title": "Sin inventario no hay defensa",
+     "text": "No puedes parchar lo que no sabes que tienes, sobre todo en equipos de red y correo."
+    },
+    {
+     "icon": "alert",
+     "title": "Prioriza lo explotado",
+     "text": "Una falla que ya se usa en ataques reales va antes que cien teóricas."
+    },
+    {
+     "icon": "cloud",
+     "title": "Automatiza las actualizaciones",
+     "text": "Ventanas de mantenimiento programadas y pruebas automáticas reducen semanas a horas."
+    }
+   ],
+   "close": {
+    "title": "Cómo te ayuda Bluedatagrid",
+    "text": "Levantamos el inventario de tu infraestructura, monitoreamos las alertas de fallas explotadas y automatizamos la instalación de parches con pruebas previas. Así tus equipos de correo, VPN y servidores se mantienen al día sin frenar tu operación.",
+    "solutions": [
+     {
+      "name": "Ciberseguridad",
+      "icon": "shield"
+     },
+     {
+      "name": "Cloud y DevOps",
+      "icon": "cloud"
+     }
+    ]
+   },
+   "sources": [
+    {
+     "name": "The Hacker News",
+     "url": "https://thehackernews.com/2026/10/microsoft-patches-record-1413-flaws.html"
+    },
+    {
+     "name": "Hardware Busters",
+     "url": "https://hwbusters.com/news/microsoft-patch-tuesday-fixes-a-record-1413-flaws-more-than-all-of-2025-combined/"
+    },
+    {
+     "name": "TechNadu",
+     "url": "https://www.technadu.com/cisco-secure-email-gateway-flaw-cve-2026-76519-is-under-active-attack-with-no-workaround/642124/"
+    },
+    {
+     "name": "BleepingComputer",
+     "url": "https://www.bleepingcomputer.com/news/security/ivanti-warns-of-connect-secure-zero-day-exploited-in-attacks/"
+    },
+    {
+     "name": "Tech Startups",
+     "url": "https://techstartups.com/2026/10/15/top-tech-news-today-october-15-2026-anthropic-cisco-gartner-google-openai-ramp-tsmc-more/"
+    }
+   ]
+  },
+  {
+   "slug": "ia-con-freno-de-emergencia",
+   "date": "2026-10-12",
+   "week": "5 al 11 de octubre de 2026",
+   "cat": "Inteligencia Artificial",
+   "icon": "brain",
+   "title": "La IA ya trabaja por ti. ¿Quién la vigila?",
+   "dek": "OpenAI lanzó GPT-6 para más de 1,200 millones de usuarios semanales y, días después, el CEO de Microsoft pidió tratar a todo modelo de IA como si ya estuviera comprometido.",
+   "tldr": "La IA ya no solo responde: arma interfaces, usa datos de tu empresa y actúa en tu nombre. Satya Nadella propone darle el mínimo de permisos, registrar todo lo que hace y poder detenerla en cualquier momento, igual que a un empleado con acceso a sistemas críticos.",
+   "stats": [
+    {
+     "n": "1,200 M",
+     "l": "personas usan ChatGPT cada semana"
+    },
+    {
+     "n": "7",
+     "l": "principios de Nadella para controlar la IA"
+    },
+    {
+     "n": "44 %",
+     "l": "más rápido responde GPT-6 Instant con búsqueda web"
+    },
+    {
+     "n": "0",
+     "l": "modelos que deberían certificarse a sí mismos"
+    }
+   ],
+   "flow_title": "Cómo poner una IA bajo control",
+   "flow": [
+    {
+     "icon": "lock",
+     "label": "Dale el mínimo de permisos necesarios"
+    },
+    {
+     "icon": "radar",
+     "label": "Registra cada acción en una bitácora inalterable"
+    },
+    {
+     "icon": "search",
+     "label": "Que la revise alguien independiente, no otro modelo"
+    },
+    {
+     "icon": "alert",
+     "label": "Ten un freno para pausarla a mitad de una tarea"
+    }
+   ],
+   "stories": [
+    {
+     "icon": "sparkles",
+     "place": "Estados Unidos",
+     "title": "GPT-6 y la Interfaz Inteligente",
+     "text": "Desde el 7 de octubre, ChatGPT responde con gráficas, formularios, botones y calculadoras que arma al momento, no solo con texto. Los planes de pago usan GPT-6 Sol y los gratuitos GPT-6 Luna.",
+     "src": "Unite.AI",
+     "url": "https://www.unite.ai/openai-brings-gpt-6-with-intelligent-ui-to-all-chatgpt-tiers/"
+    },
+    {
+     "icon": "building",
+     "place": "Microsoft",
+     "title": "Un freno de emergencia para cada modelo",
+     "text": "Nadella publicó siete principios: diversidad de modelos, observabilidad, verificabilidad, controles y auditoría independientes, contención y aviso de incidentes. Su idea central: si no se puede observar, no se puede confiar.",
+     "src": "Xataka",
+     "url": "https://www.xataka.com/robotica-e-ia/satya-nadella-ceo-microsoft-debemos-asumir-que-todos-modelos-ia-estan-comprometidos-contenerlos-principio"
+    }
+   ],
+   "lessons": [
+    {
+     "icon": "lock",
+     "title": "Permisos mínimos",
+     "text": "Cada agente de IA accede solo a los datos y sistemas que su tarea necesita."
+    },
+    {
+     "icon": "database",
+     "title": "Todo queda registrado",
+     "text": "Bitácoras legibles y a prueba de alteraciones para auditar lo que hizo la IA."
+    },
+    {
+     "icon": "network",
+     "title": "No dependas de un solo modelo",
+     "text": "Combina proveedores y evita que un modelo se revise a sí mismo."
+    }
+   ],
+   "close": {
+    "title": "Cómo te ayuda Bluedatagrid",
+    "text": "Integramos IA en tus procesos con controles desde el diseño: permisos mínimos, bitácoras de cada acción, revisión humana en los pasos críticos y un botón para detenerla. Así aprovechas la nueva generación de modelos sin perder el control de tus datos.",
+    "solutions": [
+     {
+      "name": "Inteligencia Artificial",
+      "icon": "brain"
+     },
+     {
+      "name": "Ciberseguridad",
+      "icon": "shield"
+     }
+    ]
+   },
+   "sources": [
+    {
+     "name": "Unite.AI",
+     "url": "https://www.unite.ai/openai-brings-gpt-6-with-intelligent-ui-to-all-chatgpt-tiers/"
+    },
+    {
+     "name": "Tech Startups",
+     "url": "https://techstartups.com/2026/10/09/tech-news-weekly-roundup-the-biggest-stories-in-ai-big-tech-startups-and-cybersecurity/"
+    },
+    {
+     "name": "Xataka",
+     "url": "https://www.xataka.com/robotica-e-ia/satya-nadella-ceo-microsoft-debemos-asumir-que-todos-modelos-ia-estan-comprometidos-contenerlos-principio"
+    },
+    {
+     "name": "Mezha",
+     "url": "https://mezha.ua/en/news/satya-nadella-modeli-shi-vidpochatku-slid-vvazhati-vrazlivimi-316044/"
+    }
+   ]
+  },
+  {
+   "slug": "ia-ataca-sola-bancos-y-nube",
+   "date": "2026-10-11",
+   "week": "5 al 9 de octubre de 2026",
+   "cat": "Ciberseguridad",
+   "icon": "shield",
+   "title": "La semana en que la IA empezó a atacar sola",
+   "dek": "Una herramienta autónoma con IA vulneró bancos en Corea del Sur y un ransomware dejó fuera de línea una nube en Japón. Esto es lo que significa para tu organización.",
+   "tldr": "Los atacantes ya usan agentes de IA que buscan fallas y trazan rutas de entrada casi sin intervención humana. Y cuando cae tu proveedor de nube, solo se recupera rápido quien tiene sus propios respaldos.",
+   "stats": [
+    {
+     "n": "5",
+     "l": "bancos coreanos reportaron datos expuestos"
+    },
+    {
+     "n": "25 mil",
+     "l": "clientes afectados solo en Shinhan Bank"
+    },
+    {
+     "n": "495",
+     "l": "empresas y gobiernos locales afectados por una sola nube"
+    },
+    {
+     "n": "4",
+     "l": "zonas de nube con datos difíciles de recuperar"
+    }
+   ],
+   "flow_title": "Cómo opera un ataque autónomo",
+   "flow": [
+    {
+     "icon": "search",
+     "label": "Escanea sistemas en busca de fallas"
+    },
+    {
+     "icon": "route",
+     "label": "Mapea rutas de entrada posibles"
+    },
+    {
+     "icon": "bot",
+     "label": "Varios agentes de IA eligen el mejor camino"
+    },
+    {
+     "icon": "unlock",
+     "label": "Entra por la red de soporte, la menos protegida"
+    }
+   ],
+   "stories": [
+    {
+     "icon": "landmark",
+     "place": "Corea del Sur",
+     "title": "Bancos atacados con apoyo de IA",
+     "text": "En los ataques a Shinhan, KB Kookmin, Hana y otros bancos se hallaron rastros de ARTEX, una herramienta de pruebas de penetración autónoma que conecta varios modelos de IA. El atacante aún no se identifica.",
+     "src": "The Korea Times",
+     "url": "https://www.koreatimes.co.kr/business/banking-finance/20261007/explainer-how-ai-emerged-as-new-threat-in-koreas-bank-hacking-crisis"
+    },
+    {
+     "icon": "cloud",
+     "place": "Japón",
+     "title": "Ransomware en la nube IDCF",
+     "text": "El 7 de octubre un ataque dejó fuera de línea servidores de IDC Frontier (SoftBank). En parte de la región, el proveedor advirtió que solo se podrá restaurar con los respaldos que tenga cada cliente.",
+     "src": "Cybernews",
+     "url": "https://cybernews.com/security/japanese-cloud-cyberattack-railways-police-495-organizations-idcf/"
+    }
+   ],
+   "lessons": [
+    {
+     "icon": "shield",
+     "title": "Protege también la periferia",
+     "text": "Redes de soporte y proveedores son la puerta favorita de los atacantes."
+    },
+    {
+     "icon": "database",
+     "title": "Ten respaldos propios",
+     "text": "Copias fuera de tu proveedor principal y pruebas de restauración periódicas."
+    },
+    {
+     "icon": "radar",
+     "title": "Defiéndete a la velocidad de la IA",
+     "text": "Monitoreo continuo y pruebas de penetración frecuentes, no una vez al año."
+    }
+   ],
+   "close": {
+    "title": "Cómo te ayuda Bluedatagrid",
+    "text": "Buscamos tus puntos débiles antes que un atacante automatizado, con pruebas de penetración y monitoreo continuo. Y diseñamos respaldos y recuperación ante desastres en varias nubes, para que un incidente de tu proveedor no detenga tu operación.",
+    "solutions": [
+     {
+      "name": "Ciberseguridad",
+      "icon": "shield"
+     },
+     {
+      "name": "Cloud y DevOps",
+      "icon": "cloud"
+     }
+    ]
+   },
+   "sources": [
+    {
+     "name": "The Korea Times",
+     "url": "https://www.koreatimes.co.kr/business/banking-finance/20261007/explainer-how-ai-emerged-as-new-threat-in-koreas-bank-hacking-crisis"
+    },
+    {
+     "name": "Cybernews",
+     "url": "https://cybernews.com/security/japanese-cloud-cyberattack-railways-police-495-organizations-idcf/"
+    },
+    {
+     "name": "BleepingComputer",
+     "url": "https://www.bleepingcomputer.com/news/security/ransomware-attack-disrupts-japans-idcf-cloud-used-by-govt-clients/"
+    },
+    {
+     "name": "Tech Startups",
+     "url": "https://techstartups.com/2026/10/09/tech-news-weekly-roundup-the-biggest-stories-in-ai-big-tech-startups-and-cybersecurity/"
+    }
+   ]
+  }
+ ]
+}
