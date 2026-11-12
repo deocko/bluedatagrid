@@ -12,11 +12,11 @@ var nt="";try{nt=performance.getEntriesByType("navigation")[0].type;}catch(e){}
 var en=rd()[P],Y=null;
 if(!location.hash){Y=0;if(en&&(nt==="back_forward"||last===en.to))Y=en.y;}
 var stop=Y===null;
-function go(){if(stop)return;try{window.scrollTo({top:Y,left:0,behavior:"instant"});}catch(e){window.scrollTo(0,Y);}}
+function toY(){if(stop)return;try{window.scrollTo({top:Y,left:0,behavior:"instant"});}catch(e){window.scrollTo(0,Y);}}
 function halt(){stop=true;}
 ["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,halt,{passive:true,once:true});});
-go();addEventListener("DOMContentLoaded",go);
-addEventListener("load",function(){go();setTimeout(go,150);setTimeout(function(){go();halt();},600);});
+toY();addEventListener("DOMContentLoaded",toY);
+addEventListener("load",function(){toY();setTimeout(toY,150);setTimeout(function(){toY();halt();},600);});
 addEventListener("pageshow",function(e){if(e.persisted)halt();});
 document.addEventListener("click",function(ev){var a=ev.target&&ev.target.closest&&ev.target.closest("a[href]");if(!a||a.target==="_blank")return;
   var h=a.getAttribute("href")||"";if(/^(#|mailto:|tel:|javascript:)/i.test(h))return;
@@ -69,7 +69,20 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 </script><title>Bluedatagrid · Acceso</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Acceso para clientes y equipo de Bluedatagrid.">
+<meta name="description" content="Portal de clientes de Bluedatagrid: muy pronto podrás dar seguimiento a tus proyectos aquí. Mientras tanto, te atendemos por WhatsApp o correo.">
+<link rel="canonical" href="https://deocko.github.io/bluedatagrid/acceso.html">
+<meta property="og:url" content="https://deocko.github.io/bluedatagrid/acceso.html">
+<meta property="og:image" content="https://deocko.github.io/bluedatagrid/img/og-bluedatagrid.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bluedatagrid · Data That Thinks">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bluedatagrid · Acceso">
+<meta property="og:description" content="Portal de clientes de Bluedatagrid: muy pronto podrás dar seguimiento a tus proyectos aquí. Mientras tanto, te atendemos por WhatsApp o correo.">
+<meta property="og:locale" content="es_MX">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Poppins:wght@300;400;500&amp;display=swap">
 <style>
 [hidden]{display:none !important}
@@ -93,7 +106,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #44A5CE;outline-offset:2p
 <p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #EABE31">Acceso</p>
 <h1 style="margin: 0; font-family: Montserrat, Poppins, sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 40px); line-height: 1.15; color: #FFFFFF">Una sola entrada para todo lo que haces con Bluedatagrid.</h1>
 <div style="width: 40px; height: 3px; background: #EABE31"></div>
-<p style="margin: 0; font-size: 15px; line-height: 24px; color: #C9D3DD">Inicia sesión y te llevamos al módulo que corresponde a tu cuenta.</p>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #C9D3DD">Muy pronto tendrás aquí un acceso único con el módulo que corresponde a tu cuenta.</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 14px"><p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #44A5CE">Para clientes</p><div style="display: flex; gap: 12px; align-items: flex-start"><div style="width: 36px; height: 36px; flex: 0 0 36px; border-radius: 8px; background: #2A4258; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EABE31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg></div><div><p style="margin: 0; font-family: Montserrat, Poppins, sans-serif; font-weight: 600; font-size: 14px; color: #FFFFFF">Seguimiento de proyectos</p><p style="margin: 2px 0 0; font-size: 13px; line-height: 19px; color: #A9B7C6">Avance, entregables y próximos hitos.</p></div></div><div style="display: flex; gap: 12px; align-items: flex-start"><div style="width: 36px; height: 36px; flex: 0 0 36px; border-radius: 8px; background: #2A4258; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EABE31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6"></path><path d="M8 13h8M8 17h5"></path></svg></div><div><p style="margin: 0; font-family: Montserrat, Poppins, sans-serif; font-weight: 600; font-size: 14px; color: #FFFFFF">Cotizaciones y facturas</p><p style="margin: 2px 0 0; font-size: 13px; line-height: 19px; color: #A9B7C6">Consulta y descarga tus documentos con folio.</p></div></div><div style="display: flex; gap: 12px; align-items: flex-start"><div style="width: 36px; height: 36px; flex: 0 0 36px; border-radius: 8px; background: #2A4258; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EABE31" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></div><div><p style="margin: 0; font-family: Montserrat, Poppins, sans-serif; font-weight: 600; font-size: 14px; color: #FFFFFF">Solicitudes de soporte</p><p style="margin: 2px 0 0; font-size: 13px; line-height: 19px; color: #A9B7C6">Levanta requerimientos y sigue su atención.</p></div></div></div>
@@ -106,103 +119,25 @@ button:focus-visible,a:focus-visible{outline:3px solid #44A5CE;outline-offset:2p
 <main style="flex: 1 1 460px; display: flex; align-items: center; justify-content: center; padding: 48px 24px">
 <div style="width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 28px">
 
-<div id="vForm" style="display: flex; flex-direction: column; gap: 28px">
+<div id="vSoon" role="status" style="display: flex; flex-direction: column; gap: 22px">
 <div style="display: flex; flex-direction: column; gap: 8px">
-<h2 style="margin: 0; font-family: Montserrat, Poppins, sans-serif; font-weight: 700; font-size: 28px; line-height: 36px; color: #1F2F3F">Iniciar sesión</h2>
-<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5B6775">Usa el correo y la contraseña de tu cuenta. El acceso es el mismo para clientes y para el equipo de Bluedatagrid.</p>
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #1E6F94">Muy pronto</p>
+<h2 style="margin: 0; font-family: Montserrat, Poppins, sans-serif; font-weight: 700; font-size: 28px; line-height: 36px; color: #1F2F3F">Portal de clientes próximamente</h2>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5B6775">Estamos preparando el portal donde podrás dar seguimiento a tus proyectos, cotizaciones, facturas y solicitudes de soporte. Mientras tanto, escríbenos y un asesor te atiende directamente.</p>
 </div>
-
-<div id="err" hidden role="alert" style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 8px; background: #FDF3D6; color: #6B4E00; font-size: 14px; line-height: 20px">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6500" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex: 0 0 18px; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>
-<span id="errText"></span></div>
-
-<div style="display: flex; flex-direction: column; gap: 18px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<label for="email" style="font-size: 14px; font-weight: 500; color: #1F2F3F">Correo electrónico</label>
-<input id="email" type="email" autocomplete="username" placeholder="nombre@empresa.com" style="width: 100%; box-sizing: border-box; height: 48px; padding: 0 14px; border: 1px solid #B8C2CC; border-radius: 8px; font-family: Poppins, system-ui, sans-serif; font-size: 15px; color: #1F2F3F; background: #FFFFFF">
-</div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
-<label for="pass" style="font-size: 14px; font-weight: 500; color: #1F2F3F">Contraseña</label>
-<a href="#recuperar" style="font-size: 13px">¿Olvidaste tu contraseña?</a>
-</div>
-<div style="position: relative">
-<input id="pass" type="password" autocomplete="current-password" placeholder="••••••••" style="width: 100%; box-sizing: border-box; height: 48px; padding: 0 14px; border: 1px solid #B8C2CC; border-radius: 8px; font-family: Poppins, system-ui, sans-serif; font-size: 15px; color: #1F2F3F; background: #FFFFFF; padding-right: 56px">
-<button type="button" id="btnShow" aria-label="Mostrar contraseña" style="position: absolute; right: 2px; top: 2px; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 6px">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6775" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-</button></div>
-</div>
-<label style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #5B6775; cursor: pointer; min-height: 44px">
-<input type="checkbox" id="remember" checked style="width: 18px; height: 18px; accent-color: #1E6F94; margin: 0">Mantener sesión iniciada en este equipo</label>
-</div>
-
-<button type="button" id="btnSubmit" style="height: 50px; border: 0; border-radius: 8px; background: #EABE31; color: #1F2F3F; font-family: Poppins, system-ui, sans-serif; font-size: 16px; font-weight: 500; cursor: pointer">Iniciar sesión</button>
-
-<div style="display: flex; align-items: center; gap: 12px; color: #5B6775; font-size: 13px"><div style="flex: 1; height: 1px; background: #DDE3EA"></div>o<div style="flex: 1; height: 1px; background: #DDE3EA"></div></div>
-
-<button type="button" style="height: 50px; border: 1px solid #B8C2CC; border-radius: 8px; background: #FFFFFF; color: #1F2F3F; font-family: Poppins, system-ui, sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E6F94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
-Continuar con inicio de sesión único (SSO)</button>
-</div>
-
-<div id="vDone" hidden style="display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<h2 style="margin: 0; font-family: Montserrat, Poppins, sans-serif; font-weight: 700; font-size: 26px; color: #1F2F3F"><span id="welcome"></span></h2>
-<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5B6775">Sesión iniciada como <b id="who" style="color: #1F2F3F"></b>. Elige a dónde quieres entrar.</p>
-</div>
-<div id="vApps" style="display: flex; flex-direction: column; gap: 10px">
-<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #1E6F94">Tus plataformas</p>
-<button type="button" class="appt" data-app="mod" style="display: flex; align-items: center; gap: 14px; width: 100%; padding: 14px 16px; border: 1px solid #DDE3EA; border-radius: 12px; background: #FFFFFF; cursor: pointer; text-align: left; font-family: Poppins, system-ui, sans-serif"><svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true" style="flex: none"><polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="#1F2F3F" stroke="#1F2F3F" stroke-width="1.5" stroke-linejoin="round"></polygon><polygon points="24,15 31,19 24,23 17,19" fill="#F6CA43"></polygon><polygon points="17,19 24,23 24,32 17,28" fill="#EABE31"></polygon><polygon points="24,23 31,19 31,28 24,32" fill="#CD9A1B"></polygon></svg><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; font-weight: 600; color: #1F2F3F"><span id="moduleName"></span></b><span style="font-size: 13px; line-height: 18px; color: #5B6775"><span id="moduleSub"></span></span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E6F94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 6l6 6-6 6"></path></svg></button>
-<button type="button" class="appt" data-app="xunset" style="display: flex; align-items: center; gap: 14px; width: 100%; padding: 14px 16px; border: 1px solid #DDE3EA; border-radius: 12px; background: #FFFFFF; cursor: pointer; text-align: left; font-family: Poppins, system-ui, sans-serif"><svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true" style="flex: none"><polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="#1F2F3F" stroke="#1F2F3F" stroke-width="1.5" stroke-linejoin="round"></polygon><path d="M17 16l14 16M31 16L17 32" stroke="#EABE31" stroke-width="3.2" stroke-linecap="round"></path></svg><span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; font-weight: 600; color: #1F2F3F">Xunset</b><span style="font-size: 13px; line-height: 18px; color: #5B6775">Control de condominios, fraccionamientos y parques industriales</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E6F94" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M9 6l6 6-6 6"></path></svg></button>
-<div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px dashed #C9D3DD; border-radius: 12px"><svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true" style="flex: none"><polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="#FFFFFF" stroke="#C9D3DD" stroke-width="1.5" stroke-linejoin="round"></polygon><path d="M24 17v14M17 24h14" stroke="#5B6775" stroke-width="2" stroke-linecap="round"></path></svg><span style="font-size: 13px; line-height: 18px; color: #5B6775">Las nuevas plataformas aparecerán aquí cuando te den acceso.</span></div>
-</div>
-<div id="vApp" hidden role="status" style="display: flex; flex-direction: column; gap: 10px; padding: 20px; border-radius: 12px; background: #F3F6F9; border: 1px solid #DDE3EA">
-<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #1E6F94">Demo</p>
-<p style="margin: 0; font-family: Montserrat, Poppins, sans-serif; font-weight: 600; font-size: 20px; color: #1F2F3F">Abriendo <span id="appName"></span>…</p>
-<p style="margin: 0; font-size: 14px; line-height: 22px; color: #4A5664">En la versión final te llevará a <b style="color: #1F2F3F"><span id="appUrl"></span></b> con tu sesión ya iniciada, sin volver a escribir tu contraseña.</p>
-<button type="button" id="btnCloseApp" style="align-self: flex-start; min-height: 44px; padding: 0; border: 0; background: none; color: #1E6F94; font-family: Poppins, system-ui, sans-serif; font-size: 14px; font-weight: 500; cursor: pointer">← Volver a mis plataformas</button>
-</div>
-<button type="button" id="btnLogout" style="align-self: flex-start; height: 44px; padding: 0 18px; border: 1px solid #B8C2CC; border-radius: 8px; background: #FFFFFF; color: #1F2F3F; font-family: Poppins, system-ui, sans-serif; font-size: 14px; cursor: pointer">Cerrar sesión</button>
+<a href="https://wa.me/524421567872?text=Hola%2C%20soy%20cliente%20de%20Bluedatagrid%20y%20necesito%20ayuda." target="_blank" rel="noopener" style="height: 50px; border-radius: 8px; background: #EABE31; color: #1F2F3F; font-family: Poppins, system-ui, sans-serif; font-size: 16px; font-weight: 500; display: flex; align-items: center; justify-content: center; text-decoration: none">Escríbenos por WhatsApp</a>
+<a href="mailto:contacto@bluedatagrid.com?subject=Atenci%C3%B3n%20a%20clientes" style="height: 50px; border: 1px solid #B8C2CC; border-radius: 8px; background: #FFFFFF; color: #1F2F3F; font-family: Poppins, system-ui, sans-serif; font-size: 15px; font-weight: 500; display: flex; align-items: center; justify-content: center; text-decoration: none">contacto@bluedatagrid.com</a>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 8px; border-top: 1px solid #DDE3EA">
-<p style="margin: 0; padding-top: 14px; font-size: 12px; line-height: 18px; color: #5B6775">Acceso exclusivo para clientes y personal autorizado de Bluedatagrid. La actividad en este portal queda registrada.</p>
+<p style="margin: 0; padding-top: 14px; font-size: 12px; line-height: 18px; color: #5B6775">Por tu seguridad, aquí no pedimos contraseñas mientras el portal no esté disponible.</p>
 <a href="index.html" style="font-size: 14px">← Volver al sitio</a>
 </div>
 
 </div>
 </main>
 </div>
-<script>
-(function(){
-  var $=function(id){return document.getElementById(id);};
-  var email=$('email'), pass=$('pass');
-  function err(m){$('errText').textContent=m;$('err').hidden=!m;}
-  email.addEventListener('input',function(){err('');}); pass.addEventListener('input',function(){err('');});
-  $('btnShow').addEventListener('click',function(){var t=pass.type==='password';pass.type=t?'text':'password';this.setAttribute('aria-label',t?'Ocultar contraseña':'Mostrar contraseña');});
-  var role=false;
-  function showApp(app){$('vApps').hidden=!!app;$('vApp').hidden=!app;if(!app)return;
-    $('appName').textContent=app==='xunset'?'Xunset':(role?'Panel de empleados':'Portal de clientes');
-    $('appUrl').textContent=app==='xunset'?'xunset.bluedatagrid.com':(role?'intranet.bluedatagrid.com':'portal.bluedatagrid.com');}
-  document.querySelectorAll('.appt').forEach(function(t){t.addEventListener('click',function(){showApp(t.getAttribute('data-app'));});});
-  $('btnCloseApp').addEventListener('click',function(){showApp('');});
-  function go(){
-    var em=(email.value||'').trim();
-    if(!em||!pass.value) return err('Ingresa tu correo y tu contraseña.');
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) return err('El correo no tiene un formato válido.');
-    var emp=/@bluedatagrid\.com$/i.test(em);
-    $('welcome').textContent=emp?'Hola, equipo Bluedatagrid':'Bienvenido a tu portal';
-    $('who').textContent=em;
-    $('moduleName').textContent=emp?'Panel de empleados':'Portal de clientes';
-    $('moduleSub').textContent=emp?'Cotizaciones, contratos, oficios y expedientes':'Proyectos, cotizaciones, facturas y soporte';
-    role=emp; showApp('');
-    $('vForm').hidden=true; $('vDone').hidden=false; err('');
-  }
-  $('btnSubmit').addEventListener('click',go);
-  [email,pass].forEach(function(i){i.addEventListener('keydown',function(e){if(e.key==='Enter')go();});});
-  $('btnLogout').addEventListener('click',function(){pass.value='';$('vDone').hidden=true;$('vForm').hidden=false;});
-})();
-</script><script>(function(){
+<script>(function(){
   if(document.getElementById('bcTab'))return;
   /* Asistente Bluedatagrid con Gridie, la mascota (2026-10-24): Gridie asoma por la orilla derecha y al abrir sale completo; su cara es el avatar del encabezado.
      Responde con una base de respuestas propia; en la vista previa de claude.ai, si el visitante lo permite, las preguntas libres las contesta Claude con el mismo contexto. */

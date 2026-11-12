@@ -69,12 +69,18 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 </script><title>Blog · Bluedatagrid</title>
 <meta name="description" content="Cada semana, la noticia más relevante en tecnologías de la información, explicada en un minuto y lo que significa para tu organización.">
+<link rel="canonical" href="https://deocko.github.io/bluedatagrid/blog.html">
+<meta property="og:url" content="https://deocko.github.io/bluedatagrid/blog.html">
+<meta property="og:image" content="https://deocko.github.io/bluedatagrid/img/og-bluedatagrid.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bluedatagrid · Data That Thinks">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bluedatagrid">
 <meta property="og:locale" content="es_MX">
 <meta property="og:title" content="Blog · Bluedatagrid">
 <meta property="og:description" content="Cada semana, la noticia más relevante en tecnologías de la información, explicada en un minuto y lo que significa para tu organización.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Blog · Bluedatagrid">
 <meta name="twitter:description" content="Cada semana, la noticia más relevante en tecnologías de la información, explicada en un minuto y lo que significa para tu organización.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -385,8 +391,8 @@ function render(data,slug){
   h+='</div></article>';
   if(older||newer){h+='<div class="pn">'+(older?'<a href="#'+older.slug+'"><small>← Semana anterior</small><b>'+e(older.title)+'</b></a>':'')+(newer?'<a class="nx" href="#'+newer.slug+'"><small>Semana siguiente →</small><b>'+e(newer.title)+'</b></a>':'')+'</div>';}
   var L0=posts[0],PDF='blog/pdf/Bluedatagrid_Blog_'+L0.slug+'.pdf';
-  h+='<section class="sub" aria-labelledby="subt">'+hx('mail',56,'#2A4258','#44A5CE','#F6CA43')+'<div><span class="ov">Suscríbete</span><h3 id="subt">Recibe la nota de cada semana en PDF</h3><p>Solo escribe tu correo y listo: te mandamos el radar tecnológico de la semana.</p></div>'+
-     '<form class="sub-f" id="subF" novalidate><input type="email" id="subE" placeholder="tu@correo.com" autocomplete="email" inputmode="email" aria-label="Tu correo electrónico" required><button type="submit">'+ic('mail',18)+'Suscribirme</button></form><p class="sub-m" id="subM" aria-live="polite"></p></section>';
+  h+='<section class="sub" aria-labelledby="subt">'+hx('mail',56,'#2A4258','#44A5CE','#F6CA43')+'<div><span class="ov">Suscríbete</span><h3 id="subt">Recibe la nota de cada semana en PDF</h3><p>Escríbenos a contacto@bluedatagrid.com con el asunto «Suscripción al blog» y te agregamos a la lista del radar tecnológico de la semana.</p></div>'+
+     '<div class="sub-ok"><a href="mailto:contacto@bluedatagrid.com?subject=Suscripci%C3%B3n%20al%20blog&amp;body=Quiero%20recibir%20la%20nota%20semanal%20del%20blog%20de%20Bluedatagrid.">'+ic('mail',18)+'Suscribirme por correo</a><a href="'+PDF+'" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)">Ver la nota de esta semana (PDF)</a></div></section>';
   var cats={};posts.forEach(function(x){cats[x.cat]=(cats[x.cat]||0)+1;});
   h+='<section class="ab" aria-labelledby="abt"><div class="hd"><div><h3 class="sec" id="abt">Archivo del blog</h3><p>'+posts.length+' publicaci'+(posts.length===1?'ón':'ones')+' desde el '+fd(asc[0].date)+'.</p></div>'+
      '<label class="sb">'+ic('search',18)+'<input id="aq" type="search" placeholder="Buscar en semanas anteriores" aria-label="Buscar en el archivo" value="'+e(AQ)+'"></label></div>'+
@@ -394,11 +400,7 @@ function render(data,slug){
      Object.keys(cats).sort().map(function(c){return '<button type="button" class="fc" data-c="'+e(c)+'" aria-pressed="'+(AC===c)+'">'+e(c)+' <em>'+cats[c]+'</em></button>';}).join('')+
      '</div><div id="al" aria-live="polite"></div></section>';
   var m=document.getElementById('post');m.innerHTML=h;if(window.bdgVT)window.bdgVT();
-  var sf=document.getElementById('subF');if(sf){sf.addEventListener('submit',function(ev){ev.preventDefault();var em=document.getElementById('subE').value.trim(),mm=document.getElementById('subM');
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)){mm.className='sub-m err';mm.textContent='Escribe un correo válido, por ejemplo nombre@empresa.com.';return;}
-    try{localStorage.setItem('bdgSub',em);}catch(_){}
-    if(window.BDG_SUBS_URL){try{fetch(window.BDG_SUBS_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:em,source:'blog'})}).catch(function(){});}catch(_){}}
-    mm.className='sub-m';mm.textContent='';sf.outerHTML='<div class="sub-ok"><b>¡Listo! Ya estás suscrito.</b><a href="'+PDF+'"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z\"/><path d=\"M14 2v6h6M8 13h8M8 17h5\"/></svg>Ver la nota de esta semana (PDF)</a></div>';});}
+
 
   function list(){var q=AQ.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''),o='',mk='';
     var r=posts.filter(function(x){if(AC&&x.cat!==AC)return false;if(!q)return true;
@@ -438,8 +440,8 @@ fetch('blog/posts.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;re
   pv.innerHTML='<div class="ldv-b"><div class="ldv-t"><span id="pvT"></span><small>Ficha de solución · Bluedatagrid</small></div><a class="ldv-d" id="pvD" href="#" download><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg><span>Descargar</span></a><button type="button" class="ldv-x" id="pvX" aria-label="Cerrar ficha"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="ldv-s" id="pvS"></div>';
   document.body.appendChild(pv);
   var S=pv.querySelector('#pvS'),D=pv.querySelector('#pvD'),T=pv.querySelector('#pvT'),X=pv.querySelector('#pvX');
-  function load(src){return new Promise(function(ok,ko){var t=document.createElement('script');t.src=src;t.onload=ok;t.onerror=ko;document.head.appendChild(t);});}
-  function lib(){if(!pjs)pjs=load(PJ+'pdf.min.js').then(function(){window.pdfjsLib.GlobalWorkerOptions.workerSrc=PJ+'pdf.worker.min.js';return window.pdfjsLib;});pjs.catch(function(){pjs=null;});return pjs;}
+  function load(src,sri){return new Promise(function(ok,ko){var t=document.createElement('script');t.src=src;if(sri){t.integrity=sri;t.crossOrigin='anonymous';}t.onload=ok;t.onerror=ko;document.head.appendChild(t);});}
+  function lib(){if(!pjs)pjs=load(PJ+'pdf.min.js','sha512-q+4liFwdPC/bNdhUpZx6aXDx/h77yEQtn4I1slHydcbZK34nLaR3cAeYSJshoxIOq3mjEf7xJE8YWIUHMn+oCQ==').then(function(){return load(PJ+'pdf.worker.min.js','sha512-BbrZ76UNZq5BhH7LL7pn9A4TKQpQeNCHOo65/akfelcIBbcVvYWOFQKPXIrykE3qZxYjmDX573oa4Ywsc7rpTw==');}).then(function(){window.pdfjsLib.GlobalWorkerOptions.workerSrc=PJ+'pdf.worker.min.js';return window.pdfjsLib;});pjs.catch(function(){pjs=null;});return pjs;}
   function msg(h){S.innerHTML='<p class="ldv-m">'+h+'</p>';}
   function view(f,title){var k=++tok;T.textContent=title;D.href=f;D.setAttribute('download',f.split('/').pop());msg('Abriendo la ficha…');pv.hidden=false;document.documentElement.style.overflow='hidden';X.focus();
     lib().then(function(L){return L.getDocument(f).promise;}).then(function(doc){if(k!==tok)return;S.innerHTML='';
