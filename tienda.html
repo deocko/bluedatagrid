@@ -221,6 +221,7 @@ footer a{color:#C9D3DD;text-decoration:none;margin-left:16px}footer a:first-chil
 .hc li span.n{flex:0 0 28px;height:28px;border-radius:50%;background:#1F2F3F;color:#F6CA43;display:grid;place-items:center;font:600 13px Montserrat,Poppins,sans-serif}
 .hc .hn{margin:16px 0 0;font-size:13px;color:var(--mut)}
 </style>
+<style id="cart-empty">/* carrito vacío: el pie con total y botones de pedido se oculta de verdad (.cf{display:flex} ganaba a [hidden]) */.cf[hidden]{display:none!important}.cf a[aria-disabled="true"]{pointer-events:none;opacity:.45}</style>
 </head>
 <body>
 <header class="hdr" style="position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50">
@@ -482,8 +483,9 @@ function badge(){var n=cart.reduce(function(a,x){return a+x.q;},0);bd.textConten
 function total(){return cart.reduce(function(a,x){var p=find(x.id);return a+(p?p.p*x.q:0);},0);}
 function order(){return 'Hola Bluedatagrid, quiero hacer este pedido de la tienda:\n'+cart.map(function(x){var p=find(x.id);return '• '+x.q+' × '+p.n+' ('+p.c[x.c][0]+(x.s?', talla '+x.s:'')+') '+money(p.p*x.q);}).join('\n')+'\nTotal: '+money(total())+'\n¿Me ayudan con el envío y el pago?';}
 function renderC(){cart=cart.filter(function(x){return find(x.id);});
-  if(!cart.length){ci.innerHTML='<div class="ce"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 11.2a1.5 1.5 0 0 0 1.5 1.2h8.3a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.3"/><circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><p>Tu carrito está vacío.</p></div>';cf.hidden=true;return;}
-  cf.hidden=false;
+  if(!cart.length){ci.innerHTML='<div class="ce"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.2l2.3 11.2a1.5 1.5 0 0 0 1.5 1.2h8.3a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.3"/><circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg><p>Tu carrito está vacío.</p></div>';cf.hidden=true;$('#tot').textContent=money(0);
+    ['#ow','#om'].forEach(function(q){var a=$(q);a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.tabIndex=-1;});return;}
+  cf.hidden=false;['#ow','#om'].forEach(function(q){var a=$(q);a.removeAttribute('aria-disabled');a.removeAttribute('tabindex');});
   ci.innerHTML=cart.map(function(x,i){var p=find(x.id);return '<div class="it"><div class="th">'+art(p,x.c)+'</div><div><b>'+esc(p.n)+'</b><small>'+p.c[x.c][0]+(x.s?' · Talla '+esc(x.s):'')+'</small><div class="qt"><button type="button" data-i="'+i+'" data-d="-1" aria-label="Menos">−</button><span>'+x.q+'</span><button type="button" data-i="'+i+'" data-d="1" aria-label="Más">+</button></div><br><button type="button" class="rm" data-r="'+i+'">Quitar</button></div><span class="pr">'+money(p.p*x.q)+'</span></div>';}).join('');
   $('#tot').textContent=money(total());
   var o=order();$('#ow').href='https://wa.me/'+WA+'?text='+encodeURIComponent(o);$('#om').href='mailto:'+MAIL+'?subject='+encodeURIComponent('Pedido de la tienda Bluedatagrid')+'&body='+encodeURIComponent(o);}
