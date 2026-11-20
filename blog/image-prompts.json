@@ -1,0 +1,54 @@
+{
+  "_instrucciones": "Genera cada imagen con tu herramienta de IA (ChatGPT, Gemini, Midjourney, etc.) usando el prompt. Guarda la portada como img/blog/src/<slug>.jpg (o .png/.webp) y las de las historias como img/blog/src/<slug>-1.jpg, <slug>-2.jpg. Luego corre: python3 tools/blog_images.py",
+  "_estilo": "Fotografía editorial fotorrealista, 3:2 horizontal, luz natural o de oficina, paleta fría azul marino con acentos ámbar, profundidad de campo baja. Sin texto legible, sin logotipos reales, sin rostros reconocibles de personas reales.",
+  "posts": {
+    "ia-encontro-tus-llaves": {
+      "alt": "Llaves metálicas sobre un teclado iluminado por la luz azul de un monitor con código",
+      "prompt": "Photorealistic editorial photo, a ring of old brass keys resting on a dark laptop keyboard, soft blue glow from a monitor showing blurred lines of source code, shallow depth of field, moody office at night, navy and amber color palette, no readable text, no logos, 3:2",
+      "stories": [
+        {"alt": "Pantalla con búsquedas automáticas desplazándose rápidamente en un centro de operaciones", "prompt": "Photorealistic photo of a computer screen with rapidly scrolling blurred search results in a dark security operations room, motion blur, blue light, no readable text, no logos, 3:2"},
+        {"alt": "Candado abierto junto a una tarjeta de acceso sobre un escritorio de oficina", "prompt": "Photorealistic close-up of an open steel padlock next to an access card on a wooden office desk, cool morning light, shallow depth of field, no text, no logos, 3:2"}
+      ]
+    },
+    "php2shell": {
+      "alt": "Pasillo de servidores en un centro de datos con una luz de alerta ámbar",
+      "prompt": "Photorealistic editorial photo of a server rack aisle in a data center, one rack with an amber warning light blinking, cold blue ambient light, slight haze, wide angle, no readable text, no logos, 3:2",
+      "stories": [
+        {"alt": "Analista de seguridad de espaldas frente a varios monitores con alertas", "prompt": "Photorealistic photo of a cybersecurity analyst seen from behind facing multiple monitors with red and amber alert dashboards, dark room, blurred screens, no readable text, no logos, face not visible, 3:2"},
+        {"alt": "Técnico conectando un cable de red en un servidor", "prompt": "Photorealistic close-up of a technician's hands plugging an ethernet cable into a server, blue LEDs, shallow depth of field, no text, no logos, 3:2"}
+      ]
+    },
+    "la-nube-se-llena": {
+      "alt": "Construcción de un gran centro de datos con grúas al atardecer",
+      "prompt": "Photorealistic aerial editorial photo of a huge data center campus under construction, cranes and rows of cooling units, golden hour light, desert landscape, no readable text, no logos, 3:2",
+      "stories": [
+        {"alt": "Filas interminables de servidores encendidos en un centro de datos", "prompt": "Photorealistic photo of an endless corridor of lit server racks in a hyperscale data center, symmetrical perspective, blue lights, no text, no logos, 3:2"},
+        {"alt": "Obreros con casco frente a la estructura de un nuevo centro de datos", "prompt": "Photorealistic photo of construction workers in hard hats seen from a distance in front of the steel frame of a new data center building, overcast sky, faces not visible, no text, no logos, 3:2"}
+      ]
+    },
+    "record-de-parches": {
+      "alt": "Laptop mostrando una barra de progreso de actualización en una oficina",
+      "prompt": "Photorealistic editorial photo of a laptop on an office desk showing a blurred software update progress bar, coffee mug, stack of sticky notes, soft daylight, navy and amber tones, no readable text, no logos, 3:2",
+      "stories": [
+        {"alt": "Varias computadoras de oficina actualizándose al mismo tiempo", "prompt": "Photorealistic photo of a row of office desktop computers all showing blurred update screens in an empty office after hours, no readable text, no logos, 3:2"},
+        {"alt": "Equipo de red y firewall en un rack con luces de actividad", "prompt": "Photorealistic close-up of network switches and a firewall appliance in a rack with blinking activity lights, cool blue tones, no readable text, no logos, 3:2"}
+      ]
+    },
+    "ia-con-freno-de-emergencia": {
+      "alt": "Mano cerca de un botón rojo de paro de emergencia junto a una computadora",
+      "prompt": "Photorealistic editorial photo of a hand hovering over a red industrial emergency stop button mounted on a desk next to a monitor with a blurred AI chat interface, office lighting, shallow depth of field, no readable text, no logos, 3:2",
+      "stories": [
+        {"alt": "Persona usando un asistente de IA en su celular en una cafetería", "prompt": "Photorealistic photo of a person's hands holding a smartphone with a blurred chat assistant interface, cafe background bokeh, face not visible, no readable text, no logos, 3:2"},
+        {"alt": "Sala de control con un operador supervisando pantallas", "prompt": "Photorealistic photo of a control room with an operator seen from behind supervising several screens with blurred graphs, calm blue light, no readable text, no logos, 3:2"}
+      ]
+    },
+    "ia-ataca-sola-bancos-y-nube": {
+      "alt": "Cajero automático en una calle nocturna con reflejos de luces de neón azules",
+      "prompt": "Photorealistic editorial photo of an ATM on a city street at night in East Asia, wet pavement, blue neon reflections, slightly ominous mood, no readable text, no logos, 3:2",
+      "stories": [
+        {"alt": "Fachada de un edificio bancario moderno de noche", "prompt": "Photorealistic photo of a modern glass bank office building at night, blue interior lights, empty street, no readable text, no logos, 3:2"},
+        {"alt": "Centro de datos a oscuras con solo luces de emergencia rojas", "prompt": "Photorealistic photo of a dark data center aisle with servers powered down and only red emergency lights on, eerie atmosphere, no readable text, no logos, 3:2"}
+      ]
+    }
+  }
+}
